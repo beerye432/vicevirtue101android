@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Virtue / Vice</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!----- development ----->
+   <link rel="stylesheet" href="./css/bundle.css">
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="./js/bundle.js"></script>
+    <!----- end development ----->
+  </head>
+
+  <body onload="checkLogin(); queryUserHabit(); queryUserHabit2(); 
+initializeNotificationDialog(); initializeAlertDialog()">
+  <button type="button" id="logOut" onclick="logUserOut();" title="logOut">
+      <img src="./img/logout.png" alt="Log Out" width="30px" height="30px">
+    </button>
+    <section>
+        <h1 id="display-Day"></h1>
+        <ul id="habit-list">
+        </ul>
+  <h1 id="display-Day2"></h1>
+        <ul id="habit-list2">
+        </ul>
+    </section>
+
+    <div id="ConfirmDeleteDialog" class="modal"></div>
+    <div id="ChangeSettingsDialog" class="modal"></div>
+    <div id="NotificationSettingsDialog"></div>
+    <div id="AlertDialog" class="modal"></div>
+  
+    <button type="button" id="openSettings" onclick="showSettingsDialog()" title="open settings">
+      <img src="./img/settings.png" alt="Settings" width="30px" height="30px">
+    </button>
+    <button type="button" id="addHabit" onclick="location.href='add.html'" title="add habit"><img src="./img/add_habit.png" alt="Add Habit" width="25px" height="25px"></button>
+
+    <a href = 'team.html' id = 'team'>Meet Our Team</a>
+
+    <script type="text/javascript">
+        $(".op-del").click(function handler() {
+          showConfirmDialog(this);
+        });
+
+        initializeSettingsDialog();
+        initializeConfirmDialog();
+    </script>
+</body>
+</html>
